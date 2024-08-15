@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <style>
+    .font {
+      font-family: "Lato", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+  </style>
+  <body class="font overflow-x-hidden">
+    {% include 'homepage/header.html'%}
+
+
+
+    <div class="hero h-[75vh]" style="background-image: url(https://www.rsi.edu/wp-content/uploads/hvac-ductwork.jpg);">
+      <div class="hero-overlay bg-opacity-70 w-full"></div>
+      <div class="w-full">{% include 'homepage/main.html'%}</div>
+    </div>
+    <!-- border -->
+    <div class="h-2 bg-stone-700"></div>
+
+    <!-- brands -->
+    <div class="bg-base-100">
+      {% include 'homepage/brands.html'%} 
+    </div>
+
+
+
+    {% include 'homepage/intro.html'%}
+    {% include 'homepage/contactInfo.html'%}
+ 
+    <div class="bg-base-100 ">
+      <div class="container mx-auto py-10">
+        <div class="">
+          {% include 'homepage/servicesText.html'%} 
+          {% include 'homepage/services.html'%}
+        </div>       
+      </div>
+    </div>
+    
+    {% include 'homepage/areaListWithMap.html'%}
+    {% include 'homepage/footer.html'%}
+
+
+
+  </body>
+</html>
