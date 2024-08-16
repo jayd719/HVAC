@@ -1,0 +1,63 @@
+@startuml usecase_diagram_hvac_system
+
+left to right direction
+
+
+skinparam usecase {
+    BackgroundColor DarkSeaGreen
+    BorderColor DarkSlateGray
+
+    BackgroundColor<< protected >> YellowGreen
+    BorderColor<< protected >> YellowGreen
+
+    
+
+    ArrowColor Olive
+}
+
+
+
+
+
+
+'ACTORS
+ACTOR Customer as customer
+ACTOR ADMIN as admin
+
+'WEB APP
+package "HVAC Website" as wb{
+    usecase see_company_information
+    usecase see_contact_information
+    usecase book_appointment
+
+    usecase cancel_appointment<< protected >>
+
+    usecase see_appointment_details<< protected >>
+    usecase reschedule_appointments << protected >>
+    usecase see_customer_information << protected >>
+    usecase recive_appointment_email << protected >>
+
+    usecase cancelled_by_company
+    usecase cancel_by_customer
+
+
+    cancel_appointment--cancel_by_customer: <<extends>>
+    cancel_appointment--cancelled_by_company: <<extends>>
+}
+
+'LINKS
+customer--book_appointment
+customer--see_company_information
+customer--see_contact_information
+customer--cancel_appointment
+
+admin--see_appointment_details
+admin--recive_appointment_email
+admin--reschedule_appointments
+admin--see_customer_information
+admin--cancel_appointment
+
+
+
+
+@enduml
